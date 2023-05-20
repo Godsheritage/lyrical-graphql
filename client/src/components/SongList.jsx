@@ -1,7 +1,6 @@
 import React from "react";
-// import gql from "graphql-tag";
-// import { graphql } from "react-apollo";
-
+import { FaPlusCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 const SongList = () => {
@@ -24,12 +23,15 @@ const SongList = () => {
   }
 
   return (
-    <div className="container" >
+    <div className="container">
       <ul>
         {data.songs.map((item, index) => (
           <li key={index}>{item.title}</li>
         ))}
       </ul>
+      <Link to="/addsong">
+        <FaPlusCircle />
+      </Link>
     </div>
   );
 };
