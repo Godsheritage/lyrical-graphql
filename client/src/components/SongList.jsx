@@ -24,7 +24,7 @@ const SongList = () => {
   }
 
   return (
-    <div>
+    <div className="container" >
       <ul>
         {data.songs.map((item, index) => (
           <li key={index}>{item.title}</li>

@@ -1,6 +1,8 @@
 import React from "react";
 import App from "./App.js";
 import ReactDOM from "react-dom/client";
+import 'materialize-css/dist/css/materialize.min.css';
+
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
