@@ -6,11 +6,11 @@ const AddSong = () => {
   const clickHandler = () => {};
 
   return (
-    <div>
+    <div className="container">
       <h1>Add a song</h1>
       <form action="">
         <input type="text" onChange={(e) => setInput(e.target.value)} />
-        <button onClick={clickHandler}>Submit</button>
+        <button onClick={clickHandler} className="btn waves-effect waves-light">Submit</button>
       </form>
     </div>
   );
