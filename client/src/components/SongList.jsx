@@ -30,15 +30,15 @@ const SongList = () => {
       <ul>
         {data.songs.map((item, index) => (
           <Row gutter={16}>
-            <Col span={8}>
-              <Card bordered={false}>{item.title}</Card>
+            <Col span={8} >
+              <Card bordered={true}>{item.title}</Card>
             </Col>
           </Row>
         ))}
       </ul>
       <Button>
         <Link to="/addsong">
-          Add a song <FaPlusCircle />
+          Add a song <FaPlusCircle /> 
         </Link>
       </Button>
     </div>
