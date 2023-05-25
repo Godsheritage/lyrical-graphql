@@ -6,11 +6,13 @@ const AddSong = () => {
   const [textInput, setTextInput] = useState("");
   const clickHandler = () => {};
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-  };
 
-  const addSong = gql`
+
+
+
+ 
+
+  const createSong = gql`
     mutation AddSong($title:String){
       addSong(title:$title) {
         id
@@ -19,17 +21,31 @@ const AddSong = () => {
     }
   `;
 
-  const [AddSong, { loading, error }] = useMutation(addSong);
+  const [addSong, { loading, error }] = useMutation(createSong);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // try {
+    //   const { data } = await addSong({
+    //     variables: {
+    //       input: {
+    //         title: 'Fourth Song',
+    //       },
+    //     },
+    //   });
+    //   console.log('Song created:', data.addSong);
+    // } catch (error) {
+    //   console.error('Error creating song:', error);
+    // }
+  };
 
 
-
-  
 
 
   return (
     <div className="container">
       <h1>Add a song</h1>
-      <form action="" onSubmit={submitHandler}>
+      <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setTextInput(e.target.value)} />
         <button onClick={clickHandler} className="btn waves-effect waves-light">
           Submit
@@ -40,3 +56,12 @@ const AddSong = () => {
 };
 
 export default AddSong;
+
+
+
+
+
+
+
+
+
